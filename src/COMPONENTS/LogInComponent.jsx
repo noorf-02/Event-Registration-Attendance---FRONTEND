@@ -1,8 +1,40 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import axios from "axios"
+import { useState } from 'react';
 
 function LogInComponent() {
+  const navigate = useNavigate();
+  const [auth, setAuth] = useState({
+    username: "",
+    password: "",
+  });
+
+  function handleLogIn(e) {
+    console.log(e.target.value);
+    const name = e.target.name;
+    const value = e.target.value;
+    setAuth({...auth, [name]:value});
+  }
+
+  async function submitLogIn(e) {
+    e.preventDefault();
+    try{
+      const resSignUp = await axios.post("http://localhost:5000/logIn", auth);
+    setAuth({
+      username: "",
+      password: "",
+    });
+    console.log("Submit login");
+    navigate("/eventdesk")
+    } catch(error){
+      console.error("sign up failed", error);
+    }
+     
+  }
   return (
+  
     <>
     <div className='wrapper my-10'>
       <div className="heading flex flex-col text-center">
@@ -12,12 +44,12 @@ function LogInComponent() {
     </div>
 
     <div className='wrapper my-10 flex justify-center h-[50dvh] items-center'>
-        <form action="" className='flex flex-col gap-4 sm:w-[580px] md:w-[700px] w-[290px]'>
+        <form action="" onSubmit={submitLogIn} className='flex flex-col gap-3 sm:w-[580px] md:w-[700px] w-[290px]'>
             
-                <input type="text" name='username' id='username' className='bg-white placeholder:text-[#6b7280] focus:outline-none sm:px-5 sm:py-4 px-4 py-3 font-medium text-[#242424] rounded-full shadow-2xl' placeholder='Username'/>
-                <input type="text" name='password' id='password' className='bg-white placeholder:text-[#6b7280] focus:outline-none sm:px-5 sm:py-4 px-4 py-3 font-medium text-[#242424] rounded-full shadow-2xl' placeholder='Password'/>
+                <input type="text" name='username' id='username' className='bg-white placeholder:text-[#6b7280] focus:outline-none sm:px-5 sm:py-4 px-4 py-3 font-medium text-[#242424] rounded-full shadow-2xl' placeholder='Username' value={auth.username} onChange={handleLogIn}/>
+                <input type="password" name='password' id='password' className='bg-white placeholder:text-[#6b7280] focus:outline-none sm:px-5 sm:py-4 px-4 py-3 font-medium text-[#242424] rounded-full shadow-2xl' placeholder='Password' value={auth.password} onChange={handleLogIn}/>
                 <div className="btns flex justify-center">
-                  <button className='bg-[#242424] sm:px-5 sm:py-4 px-4 py-3 font-medium text-white rounded-full shadow-2xl w-full'> Log In </button>
+                  <button type='Submit' className='bg-[#242424] sm:px-5 sm:py-4 px-4 py-3 font-medium text-white rounded-full shadow-2xl w-full hover:bg-black cursor-pointer'> Log In </button>
                 </div>
                 <p className='text-[#242424]'>Don't have an account? <Link to={"/"} className='underline'>SignUp</Link></p>
         </form>

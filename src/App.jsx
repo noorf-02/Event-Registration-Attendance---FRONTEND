@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import SignUp from './PAGES/SignUp'
 import LogIn from './PAGES/LogIn'
+import MainInterface from './PAGES/MainInterface'
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<SignUp/>} />
         <Route path="/login" element={<LogIn/>} />
+        <Route path="/eventdesk" element={<MainInterface/>}/>
       </Routes>
     </BrowserRouter>
     
