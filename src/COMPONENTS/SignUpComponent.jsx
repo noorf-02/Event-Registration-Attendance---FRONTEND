@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function SignUpComponent() {
   return (
@@ -10,20 +11,16 @@ function SignUpComponent() {
       </div>
     </div>
 
-    <div className='wrapper my-10'>
-        <form action="">
-            <div className='flex flex-col'>
-                <label htmlFor="username">Enter Username</label>
-                <input type="text" name='username' id='username' className='bg-white'/>
-            </div>
-            <div className='flex flex-col'>
-                <label htmlFor="email">Enter Email</label>
-                <input type="text" name='email' id='email' className='bg-white'/>
-            </div>
-            <div className='flex flex-col'>
-                <label htmlFor="password">Enter Password</label>
-                <input type="text" name='password' id='password' className='bg-white'/>
-            </div>
+    <div className='wrapper my-10 flex justify-center h-[60dvh] items-center'>
+        <form action="" className='flex flex-col gap-4 sm:w-[580px] md:w-[700px] w-[290px]'>
+            
+                <input type="text" name='username' id='username' className='bg-white placeholder:text-[#6b7280] focus:outline-none sm:px-5 sm:py-4 px-4 py-3 font-medium text-[#242424] rounded-full shadow-2xl' placeholder='Username'/>
+                <input type="text" name='email' id='email' className='bg-white placeholder:text-[#6b7280] focus:outline-none sm:px-5 sm:py-4 px-4 py-3 font-medium text-[#242424] rounded-full shadow-2xl' placeholder='Email'/>
+                <input type="text" name='password' id='password' className='bg-white placeholder:text-[#6b7280] focus:outline-none sm:px-5 sm:py-4 px-4 py-3 font-medium text-[#242424] rounded-full shadow-2xl' placeholder='Password'/>
+                <div className="btns flex justify-center">
+                  <button className='bg-[#242424] sm:px-5 sm:py-4 px-4 py-3 font-medium text-white rounded-full shadow-2xl w-full'> Sign Up </button>
+                </div>
+                <p className='text-[#242424]'>Already have an account? <Link to={"/login"} className='underline'>LogIn</Link></p>
         </form>
     </div>
     </>
