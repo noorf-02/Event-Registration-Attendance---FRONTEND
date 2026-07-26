@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function MainInterfaceComponent() {
   return (
     <>
-      <div className="hero bg-[#f7f7f7]  md:h-[60dvh] h-[60dvh] flex flex-col sm:rounded-b-[90px] md:rounded-b-[100px] rounded-b-[30px]">
+      <div className="hero bg-[#f7f7f7]  md:h-[70dvh] h-[60dvh] flex flex-col sm:rounded-b-[90px] md:rounded-b-[100px] rounded-b-[30px]">
         <div className="wrapper nav-list flex justify-between p-3 items-center">
           <div className="logo font-blackops sm:text-2xl text-[16px] font-bold text-[#343434]">
             EVENTDESK
@@ -28,7 +28,7 @@ function MainInterfaceComponent() {
           </p>
 
           <div className="btn flex items-center bg-[#242424] hover:bg-black text-white w-fit py-1 px-4 rounded-[16px] cursor-pointer">
-            <p>Post an Event </p>
+            <Link to={"post-event"}>Post an Event </Link>
             <i class="fa-solid fa-caret-right"></i>
           </div>
         </div>
