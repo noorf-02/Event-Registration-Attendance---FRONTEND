@@ -67,7 +67,7 @@ function SignUpComponent() {
             onChange={handleSignUp}
           />
           <input
-            type="text"
+            type="email"
             name="email"
             id="email"
             className="bg-white placeholder:text-[#6b7280] focus:outline-none sm:px-5 sm:py-4 px-4 py-3 font-medium text-[#242424] rounded-full shadow-2xl"
