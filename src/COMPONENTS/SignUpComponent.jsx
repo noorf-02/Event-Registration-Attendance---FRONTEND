@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 function SignUpComponent() {
   const navigate = useNavigate();
+  const [message, setMessage] = useState("");
   const [auth, setAuth] = useState({
     username: "",
     email: "",
@@ -28,9 +29,11 @@ function SignUpComponent() {
       password: "",
     });
     console.log("Submit Signup");
-    navigate("/login")
+    setMessage(resSignUp.data.msg);
+    navigate("/login");
     } catch(error){
       console.error("sign up failed", error);
+      setMessage(error.response.data.msg);
     }
      
   }
@@ -81,6 +84,9 @@ function SignUpComponent() {
             value={auth.password}
             onChange={handleSignUp}
           />
+          <p className="text-[#900000]">
+            {message}
+          </p>
           <div className="btns flex justify-center">
             <button
               type="Submit"
