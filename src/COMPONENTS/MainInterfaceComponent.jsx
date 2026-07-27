@@ -28,7 +28,7 @@ function MainInterfaceComponent() {
           </p>
 
           <div className="btn flex items-center bg-[#242424] hover:bg-black text-white w-fit py-1 px-4 rounded-[16px] cursor-pointer">
-            <Link to={"post-event"}>Post an Event </Link>
+            <Link to={"signup"}>Post an Event </Link>
             <i class="fa-solid fa-caret-right"></i>
           </div>
         </div>

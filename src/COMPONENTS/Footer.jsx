@@ -10,12 +10,12 @@ function Footer() {
       <div className="right-col list flex flex-col gap-2">
         <div className='btn flex items-center cursor-pointer'>
         <i class="fa-solid fa-caret-right sm:block hidden"></i>
-        <Link to={'/all-events'} className='sm:font-medium sm:text-[18px] text-[14px]'>Browse Events</Link>
+        <Link to={'/signup'} className='sm:font-medium sm:text-[18px] text-[14px]'>Browse Events</Link>
         </div>
 
         <div className='btn flex items-center cursor-pointer'>
         <i class="fa-solid fa-caret-right sm:block hidden"></i>
-        <Link to={'/post-event'} className='sm:font-medium sm:text-[18px] text-[14px]'>Post An Event</Link>
+        <Link to={'/signup'} className='sm:font-medium sm:text-[18px] text-[14px]'>Post An Event</Link>
         </div>
         
         

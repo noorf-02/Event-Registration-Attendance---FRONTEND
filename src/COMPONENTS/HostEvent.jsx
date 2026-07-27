@@ -15,7 +15,7 @@ function HostEvent() {
       <div className="right-col text-right flex flex-col items-end md:gap-5 gap-7">
         <p className='font-bold md:text-4xl text-2xl'>Ready to Host Your Next Event?</p>
         <p className='text-right italic md:text-[18px] text-[14px] '>Whether you're organizing a workshop, seminar, or training session, our platform makes event management simple. Create your event, manage registrations, monitor attendance, and focus on delivering a great experience while we take care of the logistics.</p>
-      <Link to={'/post-event'} className='bg-[#242424] text-white px-5 py-2 rounded-4xl w-fit text-[14px] md:text-[18px] font-bold hover:bg-black curosr-pointer'>Create Your Event Today</Link>
+      <Link to={'/signup'} className='bg-[#242424] text-white px-5 py-2 rounded-4xl w-fit text-[14px] md:text-[18px] font-bold hover:bg-black curosr-pointer'>Create Your Event Today</Link>
       </div>
      
       </div>
