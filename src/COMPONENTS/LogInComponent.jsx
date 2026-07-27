@@ -23,13 +23,23 @@ function LogInComponent() {
     e.preventDefault();
     try{
       const resLogIn = await axios.post("http://localhost:5000/logIn", auth);
+      const user = localStorage.setItem('user', JSON.stringify(resLogIn.data));
+      const role = resLogIn.data.role;
+      console.log(role);
     setAuth({
       username: "",
       password: "",
     });
+
+    if(role=="organizer"){
+      navigate('/post-event')
+    } else{
+      navigate('/all-events');
+    }
+
     console.log("Submit login");
     setMessage(resLogIn.data.msg);
-    navigate("/eventdesk");
+    // navigate("/");
     } catch(error){
       console.error("sign up failed", error);
       setMessage(error.response.data.msg)

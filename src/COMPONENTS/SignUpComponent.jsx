@@ -10,6 +10,7 @@ function SignUpComponent() {
     username: "",
     email: "",
     password: "",
+    role:"attendee"
   });
 
   function handleSignUp(e) {
@@ -84,6 +85,10 @@ function SignUpComponent() {
             value={auth.password}
             onChange={handleSignUp}
           />
+          <select name="role" id="" className="focus:outline-none" value={auth.role} onChange={handleSignUp}>
+            <option value="attendee">Attendee</option>
+            <option value="organizer">Organizer</option>
+          </select>
           <p className="text-[#900000]">
             {message}
           </p>
@@ -92,8 +97,8 @@ function SignUpComponent() {
               type="Submit"
               className="bg-[#242424] sm:px-5 sm:py-4 px-4 py-3 font-medium text-white rounded-full shadow-2xl w-full hover:bg-black cursor-pointer"
             >
-              {" "}
-              Sign Up{" "}
+              
+              Sign Up
             </button>
           </div>
           <p className="text-[#242424]">
