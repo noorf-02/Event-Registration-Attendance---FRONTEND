@@ -1,9 +1,10 @@
 import React from 'react'
+import POSTEVENTCOMP from '../COMPONENTS/POSTEVENTCOMP'
 
 function PostEvent() {
   return (
     <div>
-      Post an Event
+      <POSTEVENTCOMP/>
     </div>
   )
 }
