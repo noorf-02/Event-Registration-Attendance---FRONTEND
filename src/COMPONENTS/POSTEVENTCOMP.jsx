@@ -3,19 +3,6 @@ import React from "react";
 function POSTEVENTCOMP() {
   return (
     <>
-      <>
-        <div className="wrapper py-10">
-          <div className="heading flex flex-col text-center">
-            <h1 className="sm:text-5xl text-3xl font-bold text-[#242424] font-blackops">
-              EVENTDESK
-            </h1>
-            <p className="text-[#242424] italic text-[14px] sm:text-[17px]">
-              Organizer's Dashbaord
-            </p>
-            <hr className="mt-10 border-[#e4e4e4] rounded-full" />
-          </div>
-        </div>
-
         <form action="" className="">
           <div className="create-event wrapper bg-[#f7f7f7] rounded-3xl p-8 flex flex-col gap-4">
             <h1 className="text-[28px] text-center text-[#343434] font-bold">
@@ -166,7 +153,6 @@ function POSTEVENTCOMP() {
           </div>
         </form>
       </>
-    </>
   );
 }
 

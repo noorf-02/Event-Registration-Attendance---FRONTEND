@@ -32,7 +32,7 @@ function LogInComponent() {
     });
 
     if(role=="organizer"){
-      navigate('/post-event')
+      navigate('/organizer-dashboard')
     } else{
       navigate('/all-events');
     }

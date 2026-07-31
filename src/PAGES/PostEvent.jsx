@@ -1,10 +1,10 @@
 import React from 'react'
-import POSTEVENTCOMP from '../COMPONENTS/POSTEVENTCOMP'
+import HOSTDASHBOARD from '../COMPONENTS/HOSTDASHBOARD'
 
 function PostEvent() {
   return (
     <div>
-      <POSTEVENTCOMP/>
+      <HOSTDASHBOARD/>
     </div>
   )
 }
