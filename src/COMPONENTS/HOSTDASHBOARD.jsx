@@ -13,7 +13,8 @@ function HOSTDASHBOARD() {
 
             <div className="side-bar-items mt-20 flex flex-col gap-3">
               <NavLink
-                to="."
+                to="/organizer-dashboard"
+                end
                 className={({ isActive })=> `py-2 px-3 rounded-2xl ${isActive ? "bg-[#525252] text-white" : "hover:bg-[#525252]"}`}
               >
                 Dashboard
