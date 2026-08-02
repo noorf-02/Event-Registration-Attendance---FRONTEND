@@ -61,7 +61,7 @@ function POSTEVENTCOMP() {
 
   return (
     <>
-      <form action="" className="" onSubmit={submitForm}>
+      <form action="" className="py-6" onSubmit={submitForm}>
         <div className="create-event wrapper bg-[#f7f7f7] rounded-3xl p-8 flex flex-col gap-4">
           <h1 className="text-[28px] text-center text-[#343434] font-bold">
             Add Event Details
