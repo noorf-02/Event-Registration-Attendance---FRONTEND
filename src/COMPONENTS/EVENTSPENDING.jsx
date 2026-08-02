@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
 
 function EVENTSPENDING() {
-  
+  const [event,setEvent] = useState([]);
+  async function fetchEvents (){
+    const res = await axios.get("http://localhost:5000/api/events");
+    console.log(res.data);
+    setEvent(res.data)
+  }
+
+  useEffect(()=>{
+    fetchEvents();
+  },[]);
 
 
 
