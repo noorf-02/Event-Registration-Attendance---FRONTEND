@@ -16,8 +16,8 @@ function HOSTDASHBOARD() {
         </div>
       </div>
 
-      <div className="flex min-h-screen ">
-        <aside className={`bg-[#343434] p-6 transition-all duration-300 text-[#f7f7f7] md:block ${bar? 'block' : 'hidden'}`}>
+      <div className="flex">
+        <aside className={`bg-[#343434] self-stretch p-6 transition-all duration-300 text-[#f7f7f7] md:block ${bar? 'block' : 'hidden'}`}>
           <div className="flex flex-col">
             <div className="sidebar-head flex flex-col items-center">
               <h1 className="font-medium text-3xl font-blackops">EVENTDESK</h1>
@@ -54,7 +54,7 @@ function HOSTDASHBOARD() {
           </div>
         </aside>
 
-        <main className="w-full">
+        <main className="flex-1">
           <div className="heading  p-5 w-full justify-center shadow-md md:flex hidden bg-[#white] z-10 relative">
             <h1 className="font-bold text-[#343434] text-[22px]">
               Organizer's Dashboard
