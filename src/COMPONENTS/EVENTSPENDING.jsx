@@ -37,7 +37,7 @@ function EVENTSPENDING() {
                   <p>Venue: {myEvents.venue}</p>
                 </div>
 
-                <div className="basic-info flex flex-col gap-1">
+                <div className="basic-info flex flex-col gap-1 flex-wrap">
                   <h1 className="text-[22px] font-medium">{myEvents.title}</h1>
                   <p className="">{myEvents.description}</p>
                   <p className="italic text-gray-400 text-[15px]">
@@ -62,7 +62,13 @@ function EVENTSPENDING() {
                   </h1>
                   <div className="flex justify-between italic">
                     <p className="">{myEvents.organzierName}</p>
-                    <p className="flex items-center gap-3 "><i className="fa-solid fa-phone text-green-700"></i> {myEvents.contact}</p>
+                    <p className="flex items-center gap-3 "><i className="fa-solid fa-phone text-[#343434]"></i> {myEvents.contact}</p>
+                  </div>
+
+
+                  <div className="btns flex gap-2 mt-6">
+                    <button className="bg-green-900 hover:bg-green-800 cursor-pointer transition-all duration-200 text-white font-medium py-1 w-[90px] text-[16px] rounded-2xl">Edit</button>
+                    <button className="bg-red-800 hover:bg-red-900 cursor-pointer transition-all duration-200 text-white font-medium py-1 w-[90px] text-[16px] rounded-2xl">Delete</button>
                   </div>
                 </div>
               </div>
