@@ -13,6 +13,14 @@ function EVENTSPENDING() {
     fetchEvents();
   }, []);
 
+  async function deleteEvent(id) {
+    const deletedEvent = await axios.delete(
+      `http://localhost:5000/api/events/${id}`,
+    );
+    fetchEvents();
+    console.log("Event Deleted Successfully");
+  }
+
   return (
     <>
       <div className="main bg-gray-100">
@@ -62,13 +70,28 @@ function EVENTSPENDING() {
                   </h1>
                   <div className="flex justify-between italic">
                     <p className="">{myEvents.organzierName}</p>
-                    <p className="flex items-center gap-3 "><i className="fa-solid fa-phone text-[#343434]"></i> {myEvents.contact}</p>
+                    <p className="flex items-center gap-3 ">
+                      <i className="fa-solid fa-phone text-[#343434]"></i>{" "}
+                      {myEvents.contact}
+                    </p>
                   </div>
 
+                  <div className="btns flex gap-2 mt-6 items-center justify-between">
+                    <div className="flex gap-2 items-center">
+                      <button className="bg-green-900 hover:bg-green-800 cursor-pointer transition-all duration-200 text-white font-medium py-1 w-[90px] text-[16px] rounded-2xl">
+                        Edit
+                      </button>
+                      <button
+                        onClick={() => deleteEvent(myEvents._id)}
+                        className="bg-red-800 hover:bg-red-900 cursor-pointer transition-all duration-200 text-white font-medium py-1 w-[90px] text-[16px] rounded-2xl"
+                      >
+                        Delete
+                      </button>
+                    </div>
 
-                  <div className="btns flex gap-2 mt-6">
-                    <button className="bg-green-900 hover:bg-green-800 cursor-pointer transition-all duration-200 text-white font-medium py-1 w-[90px] text-[16px] rounded-2xl">Edit</button>
-                    <button className="bg-red-800 hover:bg-red-900 cursor-pointer transition-all duration-200 text-white font-medium py-1 w-[90px] text-[16px] rounded-2xl">Delete</button>
+                    <p className="italic text-gray-400">
+                      Can't edit once approved
+                    </p>
                   </div>
                 </div>
               </div>
