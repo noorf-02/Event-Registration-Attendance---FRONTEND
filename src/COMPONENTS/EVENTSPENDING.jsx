@@ -14,11 +14,26 @@ function EVENTSPENDING() {
   }, []);
 
   async function deleteEvent(id) {
-    const deletedEvent = await axios.delete(
+    const confirmDeletion = window.confirm(
+      "Are you sure you want to proceed with the deletion?",
+    );
+
+    if (!confirmDeletion) {
+      return;
+    }
+
+    try{
+      const deletedEvent = await axios.delete(
       `http://localhost:5000/api/events/${id}`,
     );
     fetchEvents();
     console.log("Event Deleted Successfully");
+    } catch (err){
+      console.log("error",err);
+      alert("Failed to delete");
+    }
+
+    
   }
 
   return (
